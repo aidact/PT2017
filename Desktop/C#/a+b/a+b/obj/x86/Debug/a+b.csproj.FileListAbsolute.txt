@@ -1,0 +1,6 @@
+C:\Users\Aida\Desktop\a+b\a+b\bin\Debug\a+b.exe
+C:\Users\Aida\Desktop\a+b\a+b\bin\Debug\a+b.pdb
+C:\Users\Aida\Desktop\a+b\a+b\obj\x86\Debug\a+b.exe
+C:\Users\Aida\Desktop\a+b\a+b\obj\x86\Debug\a+b.pdb
+C:\Users\Aida\Desktop\C#\a+b\a+b\obj\x86\Debug\a+b.exe
+C:\Users\Aida\Desktop\C#\a+b\a+b\obj\x86\Debug\a+b.pdb
