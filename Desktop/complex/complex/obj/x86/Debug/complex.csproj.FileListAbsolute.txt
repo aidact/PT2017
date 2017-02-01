@@ -1,5 +1,0 @@
-C:\Users\Aida\Desktop\complex\complex\bin\Debug\complex.exe
-C:\Users\Aida\Desktop\complex\complex\bin\Debug\complex.pdb
-C:\Users\Aida\Desktop\complex\complex\obj\x86\Debug\complex.csprojResolveAssemblyReference.cache
-C:\Users\Aida\Desktop\complex\complex\obj\x86\Debug\complex.exe
-C:\Users\Aida\Desktop\complex\complex\obj\x86\Debug\complex.pdb
