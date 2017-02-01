@@ -1,0 +1,9 @@
+C:\Users\Пользователь\Documents\Visual Studio 2015\Projects\Дробь\Complex number\bin\Debug\ConsoleApplication3.exe.config
+C:\Users\Пользователь\Documents\Visual Studio 2015\Projects\Дробь\Complex number\obj\Debug\ConsoleApplication3.exe
+C:\Users\Пользователь\Documents\Visual Studio 2015\Projects\Дробь\Complex number\obj\Debug\ConsoleApplication3.pdb
+C:\Users\Пользователь\Desktop\PT2017\Дробь\Complex number\bin\Debug\ConsoleApplication3.exe.config
+C:\Users\Пользователь\Desktop\PT2017\Дробь\Complex number\obj\Debug\ConsoleApplication3.exe
+C:\Users\Пользователь\Desktop\PT2017\Дробь\Complex number\obj\Debug\ConsoleApplication3.pdb
+C:\Users\Пользователь\Desktop\PT2017\Дробь\Complex number\bin\Debug\ConsoleApplication3.exe
+C:\Users\Пользователь\Desktop\PT2017\Дробь\Complex number\bin\Debug\ConsoleApplication3.pdb
+C:\Users\Пользователь\Desktop\PT2017\Дробь\Complex number\obj\Debug\Complex number.csprojResolveAssemblyReference.cache
