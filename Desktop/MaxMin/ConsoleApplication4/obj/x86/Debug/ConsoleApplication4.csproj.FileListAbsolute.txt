@@ -1,0 +1,8 @@
+C:\Users\Aida\Desktop\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.exe
+C:\Users\Aida\Desktop\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.pdb
+C:\Users\Aida\Desktop\ConsoleApplication4\ConsoleApplication4\obj\x86\Debug\ConsoleApplication4.exe
+C:\Users\Aida\Desktop\ConsoleApplication4\ConsoleApplication4\obj\x86\Debug\ConsoleApplication4.pdb
+C:\Users\Aida\Desktop\MaxMin\ConsoleApplication4\obj\x86\Debug\ConsoleApplication4.exe
+C:\Users\Aida\Desktop\MaxMin\ConsoleApplication4\obj\x86\Debug\ConsoleApplication4.pdb
+C:\Users\Aida\Desktop\MaxMin\ConsoleApplication4\bin\Debug\ConsoleApplication4.exe
+C:\Users\Aida\Desktop\MaxMin\ConsoleApplication4\bin\Debug\ConsoleApplication4.pdb
