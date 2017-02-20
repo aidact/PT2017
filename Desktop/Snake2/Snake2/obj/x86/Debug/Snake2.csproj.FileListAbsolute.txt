@@ -1,0 +1,5 @@
+C:\homework\Desktop\Snake2\Snake2\bin\Debug\Snake2.exe
+C:\homework\Desktop\Snake2\Snake2\bin\Debug\Snake2.pdb
+C:\homework\Desktop\Snake2\Snake2\obj\x86\Debug\Snake2.exe
+C:\homework\Desktop\Snake2\Snake2\obj\x86\Debug\Snake2.pdb
+C:\homework\Desktop\Snake2\Snake2\obj\x86\Debug\Snake2.csprojResolveAssemblyReference.cache
