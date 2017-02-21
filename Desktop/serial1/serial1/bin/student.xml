@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>Almas</name>
+  <surname>Abuev</surname>
+  <age>23</age>
+  <subjects>
+    <Subject>
+      <name>Programming languages</name>
+    </Subject>
+    <Subject>
+      <name>Programming technologies</name>
+    </Subject>
+  </subjects>
+</Student>

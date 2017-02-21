@@ -1,0 +1,4 @@
+C:\homework\Desktop\serial1\serial1\bin\Debug\serial1.exe
+C:\homework\Desktop\serial1\serial1\bin\Debug\serial1.pdb
+C:\homework\Desktop\serial1\serial1\obj\x86\Debug\serial1.exe
+C:\homework\Desktop\serial1\serial1\obj\x86\Debug\serial1.pdb

@@ -1,0 +1,4 @@
+C:\homework\Desktop\Snake\Snake\bin\Debug\Snake.exe
+C:\homework\Desktop\Snake\Snake\bin\Debug\Snake.pdb
+C:\homework\Desktop\Snake\Snake\obj\x86\Debug\Snake.exe
+C:\homework\Desktop\Snake\Snake\obj\x86\Debug\Snake.pdb

@@ -1,0 +1,6 @@
+C:\homework\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\homework\Desktop\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\homework\Desktop\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+C:\homework\Desktop\ConsoleApplication1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+C:\homework\Desktop\Snake1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+C:\homework\Desktop\Snake1\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb

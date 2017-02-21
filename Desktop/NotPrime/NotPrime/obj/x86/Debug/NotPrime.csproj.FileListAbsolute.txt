@@ -1,0 +1,4 @@
+C:\homework\Desktop\NotPrime\NotPrime\bin\Debug\NotPrime.exe
+C:\homework\Desktop\NotPrime\NotPrime\bin\Debug\NotPrime.pdb
+C:\homework\Desktop\NotPrime\NotPrime\obj\x86\Debug\NotPrime.exe
+C:\homework\Desktop\NotPrime\NotPrime\obj\x86\Debug\NotPrime.pdb

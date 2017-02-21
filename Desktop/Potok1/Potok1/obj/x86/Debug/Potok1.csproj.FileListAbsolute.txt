@@ -1,0 +1,4 @@
+C:\homework\Desktop\Potok1\Potok1\bin\Debug\Potok1.exe
+C:\homework\Desktop\Potok1\Potok1\bin\Debug\Potok1.pdb
+C:\homework\Desktop\Potok1\Potok1\obj\x86\Debug\Potok1.exe
+C:\homework\Desktop\Potok1\Potok1\obj\x86\Debug\Potok1.pdb
