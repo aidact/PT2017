@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ConsoleApplication1
 {
+    [Serializable]
     class Point
     {
         public int x, y;
