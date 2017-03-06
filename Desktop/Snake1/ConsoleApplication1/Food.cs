@@ -29,9 +29,33 @@ namespace ConsoleApplication1
             int y = new Random().Next(1, 24);
             location = new Point(x, y);
         }
-        
+
+        public static bool FoodnWall(Wall w)
+        {
+            foreach (Point p in Wall.body)
+            {
+                if (location.x == p.x & location.y == p.y)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool FoodnBody(Snake s)
+        {
+            foreach (Point p in Snake.body)
+            {
+                if (location.x == p.x & location.y == p.y)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public void Draw()
         {
+
                 Console.ForegroundColor = color;
                 Console.SetCursorPosition(location.x, location.y);
                 Console.Write(sign);
@@ -41,7 +65,8 @@ namespace ConsoleApplication1
         public void Save()
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream fs = new FileStream("../serialize.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            File.Delete("../food.xml");
+            FileStream fs = new FileStream("../food.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             try
             {
                 bf.Serialize(fs, Program.food);
@@ -57,9 +82,33 @@ namespace ConsoleApplication1
         public void Resume()
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream fs = new FileStream("../serialize.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            FileStream fs = new FileStream("../food.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             Program.food = bf.Deserialize(fs) as Food;
             fs.Close();
         }
+
+        /*public void Save()
+        {
+            string fileName = "";
+
+            fileName = @"C:HW\food.xml";
+            File.Delete("food.xml");
+            FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            XmlSerializer xs = new XmlSerializer(GetType());
+
+            xs.Serialize(fs, this);
+            fs.Close();
+        }
+        public void Resume()
+        {
+            string fileName = "";
+
+            fileName = @"C:HW\food.xml";
+            FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            XmlSerializer xs = new XmlSerializer(GetType());
+
+            Program.food = xs.Deserialize(fs) as Food;
+            fs.Close();
+        }*/
     }
 }

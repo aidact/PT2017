@@ -10,7 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 namespace ConsoleApplication1
 {
     [Serializable]
-    class Snake
+      class Snake
     {
         public char sign;
         public ConsoleColor color;
@@ -27,7 +27,12 @@ namespace ConsoleApplication1
 
         public void Move(int dx, int dy)
         {
-            
+            for (int j = Snake.body.Count() - 1; j >= 0; j--)
+            {
+                Console.SetCursorPosition(Snake.body[j].x, Snake.body[j].y);
+                Console.Write(' ');
+            }
+           
             for (int i = body.Count - 1; i >= 1; i--)
             {
                 body[i].x = body[i - 1].x;
@@ -83,9 +88,9 @@ namespace ConsoleApplication1
                 {
                     Program.ok = false;
                     Console.Clear();
-                    Console.SetCursorPosition(26, 12);
-                    Console.Write("GAME OVER");
+                    Console.SetCursorPosition(28, 12);
                     Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("GAME OVER");
                     Console.ReadKey();
                 }
             }
@@ -98,9 +103,10 @@ namespace ConsoleApplication1
                 {
                     Program.ok = false;
                     Console.Clear();
-                    Console.SetCursorPosition(26, 12);
-                    Console.Write("GAME OVER");
+                    Console.SetCursorPosition(28, 12);
                     Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("GAME OVER");
+                    Console.SetCursorPosition(28, 13);                    
                     Console.ReadKey();
                 }
             }
@@ -108,7 +114,8 @@ namespace ConsoleApplication1
         public void Save()
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream fs = new FileStream("../serialize.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            File.Delete("../snake.xml");
+            FileStream fs = new FileStream("../snake.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             try
             {
                 bf.Serialize(fs, Program.snake);
@@ -124,9 +131,42 @@ namespace ConsoleApplication1
         public void Resume()
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream fs = new FileStream("../serialize.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            FileStream fs = new FileStream("../snake.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             Program.snake = bf.Deserialize(fs) as Snake;
             fs.Close();
         }
+
+
+        /*public void Save()
+        {
+            //File.Delete("snake.xml");
+            FileStream fs = new FileStream("snake.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            
+            
+            XmlSerializer xs = new XmlSerializer(typeof(Snake));
+            try
+            {
+                xs.Serialize(fs, this);
+            }
+            catch (Exception e)
+            {
+                Console.Clear();
+                Console.WriteLine(e.Message);
+                Console.ReadKey();
+            }
+            fs.Close();
+        }
+
+        public void Resume()
+        {
+            string fileName = "";
+
+            fileName = @"C:HW\snake.xml";
+            FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            XmlSerializer xs = new XmlSerializer(typeof(Snake));
+
+            Program.snake = xs.Deserialize(fs) as Snake;
+            fs.Close();
+        }*/
     }
 }
