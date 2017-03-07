@@ -1,0 +1,5 @@
+C:\homework\Desktop\ComplexSerial\ComplexSerial\bin\Debug\ComplexSerial.exe
+C:\homework\Desktop\ComplexSerial\ComplexSerial\bin\Debug\ComplexSerial.pdb
+C:\homework\Desktop\ComplexSerial\ComplexSerial\obj\x86\Debug\ComplexSerial.exe
+C:\homework\Desktop\ComplexSerial\ComplexSerial\obj\x86\Debug\ComplexSerial.pdb
+C:\homework\Desktop\ComplexSerial\ComplexSerial\obj\x86\Debug\ComplexSerial.csprojResolveAssemblyReference.cache
