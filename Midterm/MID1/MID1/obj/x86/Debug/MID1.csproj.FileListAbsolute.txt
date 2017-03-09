@@ -1,0 +1,4 @@
+C:\homework\Desktop\MID1\MID1\bin\Debug\MID1.exe
+C:\homework\Desktop\MID1\MID1\bin\Debug\MID1.pdb
+C:\homework\Desktop\MID1\MID1\obj\x86\Debug\MID1.exe
+C:\homework\Desktop\MID1\MID1\obj\x86\Debug\MID1.pdb
