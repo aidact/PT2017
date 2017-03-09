@@ -1,0 +1,4 @@
+C:\homework\Midterm\MID3\MID3\bin\Debug\MID3.exe
+C:\homework\Midterm\MID3\MID3\bin\Debug\MID3.pdb
+C:\homework\Midterm\MID3\MID3\obj\x86\Debug\MID3.exe
+C:\homework\Midterm\MID3\MID3\obj\x86\Debug\MID3.pdb
