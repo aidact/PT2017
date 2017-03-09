@@ -1,0 +1,5 @@
+C:\homework\Midterm\MID2\MID2\bin\Debug\MID2.exe
+C:\homework\Midterm\MID2\MID2\bin\Debug\MID2.pdb
+C:\homework\Midterm\MID2\MID2\obj\x86\Debug\MID2.csprojResolveAssemblyReference.cache
+C:\homework\Midterm\MID2\MID2\obj\x86\Debug\MID2.exe
+C:\homework\Midterm\MID2\MID2\obj\x86\Debug\MID2.pdb
