@@ -1,0 +1,10 @@
+C:\homework\Attestation2\Calculator\Calculator\obj\x86\Debug\Calculator1.Form1.resources
+C:\homework\Attestation2\Calculator\Calculator\obj\x86\Debug\Calculator.Properties.Resources.resources
+C:\homework\Attestation2\Calculator\Calculator\obj\x86\Debug\Calculator1.csproj.GenerateResource.Cache
+C:\homework\Attestation2\Calculator\Calculator\obj\x86\Debug\Calculator1.csprojResolveAssemblyReference.cache
+C:\homework\Attestation2\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\homework\Attestation2\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\homework\Attestation2\Calculator\Calculator\obj\x86\Debug\Calculator.exe
+C:\homework\Attestation2\Calculator\Calculator\obj\x86\Debug\Calculator.pdb
+C:\Attestation2\Calculator\Calculator\obj\x86\Debug\Calculator.exe
+C:\Attestation2\Calculator\Calculator\obj\x86\Debug\Calculator.pdb

@@ -1,0 +1,3 @@
+C:\homework\Attestation2\Calculator\Calculator\obj\x86\Debug\Calculator.Form1.resources
+C:\homework\Attestation2\Calculator\Calculator\obj\x86\Debug\Calculator.Properties.Resources.resources
+C:\homework\Attestation2\Calculator\Calculator\obj\x86\Debug\Calculator.csproj.GenerateResource.Cache
