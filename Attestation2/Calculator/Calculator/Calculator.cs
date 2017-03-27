@@ -37,12 +37,12 @@ namespace Calculator1
 
         public void saveFirstNumber(string s)
         {
-            firstNumber = int.Parse(s);
+            firstNumber += int.Parse(s);
         }
 
         public void saveSecondNumber(string s)
         {
-            secondNumber = int.Parse(s);
+            secondNumber += int.Parse(s);
         }
         public double getResultPlus() // plus
         {
@@ -76,13 +76,15 @@ namespace Calculator1
         {
             return 1 / firstNumber;
         }
-        public double getMemoryPlus() // memory plus
+        /*public double getMemoryPlus() // memory plus
         {
-            return memoryNumber + firstNumber;
+            memoryNumber += firstNumber;
+            return memoryNumber;
         }
         public double getMemoryMinus() // memory minus
         {
-            return memoryNumber - firstNumber;
-        }
+            memoryNumber -= firstNumber;
+            return memoryNumber;
+        }*/
     }
 }

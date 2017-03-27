@@ -122,7 +122,8 @@ namespace Calculator1
         private void button17_Click(object sender, EventArgs e) // CE
         {
             display.Text = "";
-            display.Focus();
+            calculator.firstNumber = 0;
+            calculator.secondNumber = 0;
         }
 
         private void button18_Click(object sender, EventArgs e) // percent
@@ -155,7 +156,7 @@ namespace Calculator1
 
         private void button26_Click(object sender, EventArgs e) // memory save
         {
-            calculator.memoryNumber += double.Parse(display.Text);
+            calculator.memoryNumber = double.Parse(display.Text);
             display.Clear();
         }
 
@@ -171,19 +172,15 @@ namespace Calculator1
 
         private void button24_Click(object sender, EventArgs e) // memory plus
         {
-            calculator.operation = Calculator.Operation.MPLUS;
-            calculator.saveFirstNumber(display.Text);
-            display.Text = calculator.getMemoryPlus().ToString();
+            calculator.memoryNumber += double.Parse(display.Text);
         }
 
         private void button25_Click(object sender, EventArgs e) // memory minus
         {
-            calculator.operation = Calculator.Operation.MMINUS;
-            calculator.saveFirstNumber(display.Text);
-            display.Text = calculator.getMemoryMinus().ToString();
+            calculator.memoryNumber -= double.Parse(display.Text);
         }
 
-        private void button27_Click(object sender, EventArgs e)
+        private void button27_Click(object sender, EventArgs e) // 0, 
         {
             if (cnt1 == 0)
             {

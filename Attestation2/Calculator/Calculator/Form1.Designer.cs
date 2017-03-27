@@ -320,7 +320,7 @@
             this.button24.TabIndex = 24;
             this.button24.Text = "M+";
             this.button24.UseVisualStyleBackColor = true;
-            this.button24.Click += new System.EventHandler(this.button23_Click);
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // button25
             // 
@@ -330,7 +330,7 @@
             this.button25.TabIndex = 25;
             this.button25.Text = "M-";
             this.button25.UseVisualStyleBackColor = true;
-            this.button25.Click += new System.EventHandler(this.button23_Click);
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // button26
             // 
