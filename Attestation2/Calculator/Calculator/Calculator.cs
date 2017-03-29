@@ -20,8 +20,6 @@ namespace Calculator1
             SQR,
             COMP,
             MS,
-            MPLUS,
-            MMINUS,
             EQUAL
         };
         public Operation operation;
@@ -37,12 +35,12 @@ namespace Calculator1
 
         public void saveFirstNumber(string s)
         {
-            firstNumber += int.Parse(s);
+              firstNumber += double.Parse(s);
         }
 
         public void saveSecondNumber(string s)
         {
-            secondNumber += int.Parse(s);
+            secondNumber += double.Parse(s);
         }
         public double getResultPlus() // plus
         {
@@ -60,9 +58,9 @@ namespace Calculator1
         {
             return firstNumber / secondNumber;
         }
-        public double getResultPer() // percent
+        public double getResultPer(string s) // per cent
         {
-            return firstNumber / 100;
+            return (firstNumber * double.Parse(s)/100);
         }
         public double getResultSqrt() // sqrt
         {
@@ -76,15 +74,5 @@ namespace Calculator1
         {
             return 1 / firstNumber;
         }
-        /*public double getMemoryPlus() // memory plus
-        {
-            memoryNumber += firstNumber;
-            return memoryNumber;
-        }
-        public double getMemoryMinus() // memory minus
-        {
-            memoryNumber -= firstNumber;
-            return memoryNumber;
-        }*/
     }
 }

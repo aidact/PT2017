@@ -15,6 +15,9 @@ namespace Calculator1
         public int cnt;
         public int cnt1 = 0;
         public int cnt2 = 0;
+        public static bool NoOperationSign = false;
+        public static bool NumberPressed = false;
+        public static int CounterForEqualsAndNumbersAmount = 0;
         public Form1()
         {
             InitializeComponent();
@@ -24,17 +27,41 @@ namespace Calculator1
         private void number_click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            
+
+            if (calculator.operation == Calculator.Operation.EQUAL)
+            {
+                if (CounterForEqualsAndNumbersAmount == 0)
+                {
+                    NoOperationSign = true;
+                    NumberPressed = true;
+                    calculator.operation = Calculator.Operation.NUMBER;
+                    calculator.firstNumber = calculator.secondNumber;
+                    display.Text = "";
+                    CounterForEqualsAndNumbersAmount = 1;
+                }
+                else
+                {
+                    NoOperationSign = true;
+                    NumberPressed = false;
+                    calculator.operation = Calculator.Operation.EQUAL;
+                    display.Text = "";
+                    display.Text += btn.Text;
+                }
+            }
+
             if (calculator.operation == Calculator.Operation.NONE ||
                 calculator.operation == Calculator.Operation.NUMBER)
             {
-                display.Text += btn.Text;
+                if (display.Text == "0")
+                    display.Text = btn.Text;
+                else if (display.Text != "0")
+                    display.Text += btn.Text;
             }
             else if (calculator.operation == Calculator.Operation.PLUS)
             {
-                calculator.saveFirstNumber(display.Text);
+           
                 display.Text = btn.Text;
-                cnt = 1;
+            
             }
             else if (calculator.operation == Calculator.Operation.MINUS)
             {
@@ -44,9 +71,9 @@ namespace Calculator1
             }
             else if (calculator.operation == Calculator.Operation.MULT)
             {
-                calculator.saveFirstNumber(display.Text);
-                display.Text = btn.Text;
-                cnt = 3;
+               
+                display.Text = btn.Text; 
+              
             }
             else if (calculator.operation == Calculator.Operation.DIV)
             {
@@ -59,38 +86,47 @@ namespace Calculator1
 
         private void button12_Click(object sender, EventArgs e) // вывод результата после функций
         {
-            if (cnt2 == 0)
+
+            if (calculator.operation == Calculator.Operation.NUMBER || calculator.operation == Calculator.Operation.PLUS || calculator.operation == Calculator.Operation.MULT)
                 calculator.saveSecondNumber(display.Text);
-            else
-                calculator.saveFirstNumber(display.Text);
+            else if (calculator.operation == Calculator.Operation.EQUAL)
+            {
+                if (NoOperationSign == false)
+                    calculator.saveFirstNumber(display.Text);
+                else
+                    calculator.saveSecondNumber(display.Text);
+            }
             switch (cnt)
             {
                 case 1:
                     display.Text = calculator.getResultPlus().ToString();
-                    calculator.firstNumber = calculator.getResultPlus();
+                    //calculator.firstNumber = calculator.getResultPlus();
                     cnt2++;
                     break;
                 case 2:
                     display.Text = calculator.getResultMinus().ToString();
-                    calculator.firstNumber = calculator.getResultMinus();
+                    //calculator.firstNumber = calculator.getResultMinus();
                     cnt2++;
                     break;
                 case 3:
                     display.Text = calculator.getResultMult().ToString();
-                    calculator.firstNumber = calculator.getResultMult();
+                    //calculator.firstNumber = calculator.getResultMult();
                     cnt2++;
                     break;
                 case 4:
                     display.Text = calculator.getResultDiv().ToString();
-                    calculator.firstNumber = calculator.getResultDiv();
+                    //calculator.firstNumber = calculator.getResultDiv();
                     cnt2++;
                     break;
             }
+            calculator.operation = Calculator.Operation.EQUAL;
         }
 
         private void button11_Click(object sender, EventArgs e) // plus
         {
             calculator.operation = Calculator.Operation.PLUS;
+            calculator.saveFirstNumber(display.Text);
+            cnt = 1;
         }
 
         private void button13_Click(object sender, EventArgs e) // minus
@@ -106,9 +142,11 @@ namespace Calculator1
         private void button15_Click(object sender, EventArgs e) // multiplication
         {
             calculator.operation = Calculator.Operation.MULT;
+            calculator.saveFirstNumber(display.Text);
+            cnt = 3;
         }
 
-        private void button16_Click(object sender, EventArgs e) // C
+        private void button16_Click(object sender, EventArgs e) // ←
         {
             int lenght = display.Text.Length - 1;
             string text = display.Text;
@@ -119,6 +157,11 @@ namespace Calculator1
             }
         }
 
+        private void button29_Click(object sender, EventArgs e) // C
+        {
+            calculator.firstNumber = 0;
+            display.Clear();
+        }
         private void button17_Click(object sender, EventArgs e) // CE
         {
             display.Text = "";
@@ -130,7 +173,7 @@ namespace Calculator1
         {
             calculator.operation = Calculator.Operation.PERS;
             calculator.saveFirstNumber(display.Text);
-            display.Text = calculator.getResultPer().ToString();
+            display.Text = calculator.getResultPer(display.Text).ToString();
         }
 
         private void button19_Click(object sender, EventArgs e) // sqrt
@@ -182,12 +225,17 @@ namespace Calculator1
 
         private void button27_Click(object sender, EventArgs e) // 0, 
         {
-            if (cnt1 == 0)
+            /*if (cnt1 == 0)
             {
                 display.Text += ",";
                 cnt1 = 1;
             }
-            else { }
+            else { }*/
+            if (!display.Text.Contains(","))
+            {
+                display.Text += ",";
+            }
+            else return; 
         }
 
         private void button28_Click(object sender, EventArgs e) // +/-
@@ -203,5 +251,6 @@ namespace Calculator1
             }
         }
 
+       
     }
 }
