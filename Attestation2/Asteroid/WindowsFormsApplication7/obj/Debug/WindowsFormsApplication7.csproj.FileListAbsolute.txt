@@ -19,3 +19,9 @@ C:\Users\Aida\Desktop\PTW11G2\WindowsFormsApplication7_1\WindowsFormsApplication
 C:\Users\Aida\Desktop\Asteroid\WindowsFormsApplication7_1\WindowsFormsApplication7\bin\Debug\WindowsFormsApplication7.exe.config
 C:\Users\Aida\Desktop\Asteroid\WindowsFormsApplication7_1\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.exe
 C:\Users\Aida\Desktop\Asteroid\WindowsFormsApplication7_1\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.pdb
+C:\Users\Aida\Desktop\Asteroid\WindowsFormsApplication7_1\WindowsFormsApplication7\bin\Debug\WindowsFormsApplication7.exe
+C:\Users\Aida\Desktop\Asteroid\WindowsFormsApplication7_1\WindowsFormsApplication7\bin\Debug\WindowsFormsApplication7.pdb
+C:\Users\Aida\Desktop\Asteroid\WindowsFormsApplication7_1\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.csprojResolveAssemblyReference.cache
+C:\Users\Aida\Desktop\Asteroid\WindowsFormsApplication7_1\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.Form1.resources
+C:\Users\Aida\Desktop\Asteroid\WindowsFormsApplication7_1\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.Properties.Resources.resources
+C:\Users\Aida\Desktop\Asteroid\WindowsFormsApplication7_1\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.csproj.GenerateResource.Cache

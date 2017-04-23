@@ -13,89 +13,188 @@ namespace WindowsFormsApplication7
 {
     public partial class Form1 : Form
     {
+        enum Direction
+        {
+            UP,
+            DOWN,
+            RIGHT,
+            LEFT,
+            NONE
+        };
+        Direction dir;
+
         Bitmap bmp;
-        Triangle shape1, shape2, shape3, shape4;
         Ship s;
         Graphics g;
         Bullet b;
-        SolidBrush brush;
-        SolidBrush brush1;
-        SolidBrush brush2;
-        SolidBrush brush3;
+        SolidBrush brushW;
+        SolidBrush brushY;
+        SolidBrush brushR;
+        SolidBrush brushG;
+
+        public static bool BulIsEx = false;
+        public static int bul = 0;
+        Triangle tr1, tr2, tr3, tr4;
+        public int x = 492, y = 325;
+
         public Form1()
         {
             InitializeComponent();
-            shape1 = new Triangle(0, -20);
-            shape2 = new Triangle(90, 150);
-            shape3 = new Triangle(300, 180);
-            shape4 = new Triangle(400, -40);
-            s = new Ship(300, 150);
-            b = new Bullet(310, 140);
+
+            dir = Direction.NONE;
+
+            tr1 = new Triangle(180, 200);
+            tr2 = new Triangle(220, 450);
+            tr3 = new Triangle(800, 170);
+            tr4 = new Triangle(610, 510);
+
+            s = new Ship(x, y);
+            b = new Bullet(492, 240);
 
             bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            bmp = new Bitmap(@"C:\Users\Aida\Desktop\Image\fon.jpg");
+            bmp = new Bitmap(@"C:\Users\Aida\Desktop\fon.jpg");
             g = Graphics.FromImage(bmp);
             pictureBox1.Image = bmp;
-            brush = new SolidBrush(Color.White);
-            brush1 = new SolidBrush(Color.Yellow);
-            brush2 = new SolidBrush(Color.Red);
-            brush3 = new SolidBrush(Color.Green);
 
+            brushW = new SolidBrush(Color.White);
+            brushY = new SolidBrush(Color.Yellow);
+            brushR = new SolidBrush(Color.Red);
+            brushG = new SolidBrush(Color.Green);
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter) // если Enter, то происходит выстрел
+            {
+                BulIsEx = true; // пуля существует
+                Refresh();
+                pictureBox1.Image = bmp;
+            }
+
+            if (e.KeyCode == Keys.Up)
+            {
+                dir = Direction.UP;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                dir = Direction.DOWN;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                dir = Direction.RIGHT;
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                dir = Direction.LEFT;
+            }
+        }
+        static int x1 = 180, x2 = 220, x3 = 800, x4 = 610;
+        static int y1 = 200, y2 = 450, y3 = 170, y4 = 510;
+
+        private void timer1_Tick(object sender, EventArgs e) // вверхний астероид слева
+        {
+            bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            bmp = new Bitmap(@"C:\Users\Aida\Desktop\fon.jpg");
+            g = Graphics.FromImage(bmp);
+
+            pictureBox1.Image = bmp;
+
+            x1++; // asteroids
+            y1++;
+            if (x1 == 984)
+                x1 = 0;
+            if (y1 == 650)
+                y1 = 0;
+            x2++;
+            y2--;
+            if (x2 == 984)
+                x2 = 0;
+            if (y2 == 0)
+                y2 = 650;
+            x3--;
+            y3++;
+            if (x3 == 0)
+                x3 = 984;
+            if (y3 == 650)
+                y3 = 0;
+            x4--;
+            y4--;
+            if (x4 == 0)
+                x4 = 984;
+            if (y4 == 0)
+                y4 = 650;
+
+            tr1 = new Triangle(x1, y1);
+            tr2 = new Triangle(x2, y2);
+            tr3 = new Triangle(x3, y3);
+            tr4 = new Triangle(x4, y4);
+
+            if (BulIsEx) // bullet
+            {
+                bul += 4;
+                b = new Bullet(380, 220 - bul);
+            }
+
+            if (dir == Direction.UP)
+            {
+                s = new Ship(x, y-=10);
+            }
+            if (dir == Direction.DOWN)
+            {
+                s = new Ship(x, y+=10);
+            }
+            if (dir == Direction.RIGHT)
+            {
+                s = new Ship(x+=10, y);
+            }
+            if (dir == Direction.LEFT)
+            {
+                s = new Ship(x-=10, y);
+            }
+
+            Paint1();
+
+            pictureBox1.Image = bmp;
+        }
+
+        public void Paint1()
+        {
+            g.FillPath(brushR, tr1.path); // asteroids
+            g.FillPath(brushR, tr1.path1);
+            g.FillPath(brushR, tr2.path);
+            g.FillPath(brushR, tr2.path1);
+            g.FillPath(brushR, tr3.path);
+            g.FillPath(brushR, tr3.path1);
+            g.FillPath(brushR, tr4.path);
+            g.FillPath(brushR, tr4.path1);
+
+            g.FillEllipse(brushW, 100, 410, 25, 25); // snowballs
+            g.FillEllipse(brushW, 350, 400, 25, 25);
+            g.FillEllipse(brushW, 90, 150, 25, 25);
+            g.FillEllipse(brushW, 330, 120, 25, 25);
+            g.FillEllipse(brushW, 450, 170, 25, 25);
+            g.FillEllipse(brushW, 600, 440, 25, 25);
+            g.FillEllipse(brushW, 550, 310, 25, 25);
+            g.FillEllipse(brushW, 640, 240, 25, 25);
+
+            if (BulIsEx) // bullet
+            {
+                g.FillPath(brushG, b.path5);
+            }
+
+            g.FillPath(brushY, s.path3); // ship
+            g.FillPath(brushG, s.path4); // arrow
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
         }
-
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            //g.DrawPath(new Pen(Color.Red), shape1.path);
-            g.FillPath(brush2, shape1.path);
-            //g.DrawPath(new Pen(Color.Red), shape1.path1);
-            g.FillPath(brush2, shape1.path1);
-            //g.DrawPath(new Pen(Color.Red), shape2.path);
-            g.FillPath(brush2, shape2.path);
-            //g.DrawPath(new Pen(Color.Red), shape2.path1);
-            g.FillPath(brush2, shape2.path1);
-            //g.DrawPath(new Pen(Color.Red), shape3.path);
-            g.FillPath(brush2, shape3.path);
-            //g.DrawPath(new Pen(Color.Red), shape3.path1);
-            g.FillPath(brush2, shape3.path1);
-            //g.DrawPath(new Pen(Color.Red), shape4.path);
-            g.FillPath(brush2, shape4.path);
-            //g.DrawPath(new Pen(Color.Red), shape4.path1);
-            g.FillPath(brush2, shape4.path1);
-
-            //g.DrawEllipse(new Pen(Color.White), 100, 410, 20, 20);
-            g.FillEllipse(brush, 100, 410, 25, 25);
-            //g.DrawEllipse(new Pen(Color.White), 350, 400, 20, 20);
-            g.FillEllipse(brush, 350, 400, 25, 25);           
-            //g.DrawEllipse(new Pen(Color.White), 90, 150, 20, 20);
-            g.FillEllipse(brush, 90, 150, 25, 25);
-            //g.DrawEllipse(new Pen(Color.White), 330, 120, 20, 20);
-            g.FillEllipse(brush, 330, 120, 25, 25);
-            //g.DrawEllipse(new Pen(Color.White), 450, 170, 20, 20);
-            g.FillEllipse(brush, 450, 170, 25, 25);
-            //g.DrawEllipse(new Pen(Color.White), 600, 440, 20, 20);
-            g.FillEllipse(brush, 600, 440, 25, 25);
-            //g.DrawEllipse(new Pen(Color.White), 550, 310, 20, 20);
-            g.FillEllipse(brush, 550, 310, 25, 25);
-            //g.DrawEllipse(new Pen(Color.White), 640, 240, 20, 20);
-            g.FillEllipse(brush, 640, 240, 25, 25);
-
-            g.DrawPath(new Pen(Color.Yellow), s.path3); // ship
-            g.FillPath(brush1, s.path3);
-            g.DrawPath(new Pen(Color.Green), s.path4); // gun
-            g.FillPath(brush3, s.path4);
-
-            g.DrawPath(new Pen(Color.Green), b.path5); // bullet
-            g.FillPath(brush3, b.path5);
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
-
     }
 }

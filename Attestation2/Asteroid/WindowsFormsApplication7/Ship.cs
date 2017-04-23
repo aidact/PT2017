@@ -11,23 +11,29 @@ namespace WindowsFormsApplication7
     class Ship
     {
         public GraphicsPath path3 = new GraphicsPath(); // корабль
-        public GraphicsPath path4 = new GraphicsPath(); // пушка
+        public GraphicsPath path4 = new GraphicsPath(); // стрелка
+
         public Ship(int x, int y)
         {
-            path3.AddLine(x + 100, y + 80, x + 141, y + 100); // вверхняя точка
-            path3.AddLine(x + 141, y + 100, x + 141, y + 140); // вправо-вверх
-            path3.AddLine(x + 141, y + 140, x + 100, y + 160); // вправо-вниз
-            path3.AddLine(x + 100, y + 160, x + 60, y + 140); // нижняя точка
-            path3.AddLine(x + 60, y + 140, x + 60, y + 100); // влево-вниз
-            path3.AddLine(x + 60, y + 100, x + 100, y + 80); // влево-вверх
+            Point[] polypoints =
+            {
+                new Point(x,y-30),
+                new Point(x+30,y-15),
+                new Point(x+30,y+15),
+                new Point(x,y+30),
+                new Point(x-30,y+15),
+                new Point(x-30,y-15)
+            };
+            Point[] polypoints1 =
+            {
+                new Point(x,y-5),
+                new Point(x+10,y+5),
+                new Point(x-10,y+5),
+                
+            };
 
-            path4.AddLine(x + 100, y + 100, x + 110, y + 120);
-            path4.AddLine(x + 110, y + 120, x + 105, y + 120);
-            path4.AddLine(x + 105, y + 120, x + 105, y + 135);
-            path4.AddLine(x + 105, y + 135, x + 95, y + 135);
-            path4.AddLine(x + 95, y + 135, x + 95, y + 120);
-            path4.AddLine(x + 95, y + 120, x + 90, y + 120);
-            path4.AddLine(x + 90, y + 120, x + 100, y + 100);
+            path3.AddPolygon(polypoints);
+            path4.AddPolygon(polypoints1);
         }
     }
 }
