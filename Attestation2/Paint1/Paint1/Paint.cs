@@ -17,7 +17,8 @@ namespace Paint1
             PEN,
             RECTANGLE,
             ELLIPSE,
-            ERAZER
+            ERAZER,
+            FILL
         };
         public Shape shape;
         public Pen pen;
